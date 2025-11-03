@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon API App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1> Pokémon Finder </h1>
+        <p>Finn din favoritt Pokémon!</p>
+        <!-- knapp for å kalle på Pikachu -->
+        <button id="pikachuBtn" class="pikachu-btn">Kall på Pikachu ⚡</button>
+
+        <!-- Pikachu-container (den er tom til vi trykker på knappen) -->
+        <div id="pikachuContainer"></div>
+    </header>
+
+    <main>
+        <div class="search-box">
+            <input type="text" id="pokemonInput" placeholder="Skriv inn Pokémon-navn..">
+            <button id="searchBtn">Søk</button>
+        </div>
+
+        <div id="pokemonContainer" class="pokemon-container"></div>
+
+        <!-- Ny knapp for å laste inn flere Pokémon -->
+        <button id="loadMoreBtn" class="load-more">Last inn flere</button>
+    </main>
+
+    <footer>
+        <p>Laget med ❤️ av en Pokémon-fan</p>
+    </footer>
+
+
+</body>
+
+</html>

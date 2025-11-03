@@ -1,0 +1,171 @@
+/* ====== GENERELL STIL ====== */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #9bef71, #3b4cca);
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* ====== HEADER ====== */
+header {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+  color: #ffcb05;
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+/* ====== SØKEBOKS ====== */
+.search-box {
+  margin: 20px auto;
+}
+
+.search-box input {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  width: 250px;
+  font-size: 1rem;
+}
+
+.search-box button {
+  background: #ff1c1c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-left: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-box button:hover {
+  background: #ff5757;
+  transform: scale(1.05);
+}
+
+/* ====== POKÉMON-KORT ====== */
+.pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.pokemon-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  width: 180px;
+  transition: all 0.3s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.pokemon-card img {
+  width: 120px;
+  height: 120px;
+}
+
+.pokemon-card h3 {
+  margin: 10px 0 5px 0;
+  text-transform: capitalize;
+}
+
+/* ====== KNAPP: LAST INN FLERE ====== */
+.load-more {
+  background: #458f47;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 80px;
+  transition: all 0.3s ease;
+}
+
+.load-more:hover {
+  background: #66bb6a;
+  transform: scale(1.05);
+}
+
+/* ====== FOOTER ====== */
+footer {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+/* ====== MOBIL ====== */
+@media (max-width: 600px) {
+  .pokemon-card {
+    width: 45%;
+  }
+}
+
+/* === Knapp i header === */
+.pikachu-btn {
+  background: #ffcb05;
+  border: 2px solid #3b4cca;
+  color: #2a75bb;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.pikachu-btn:hover {
+  background: #ffe066;
+  transform: scale(1.05);
+}
+
+/* === Pikachu-animasjon === */
+#pikachuContainer {
+  position: relative;
+  height: 100px; /* plass til Pikachu */
+  overflow: hidden;
+}
+
+.pikachu {
+  position: absolute;
+  bottom: 0;
+  left: -150px; /* starter utenfor skjermen */
+  width: 120px;
+  animation: runAcross 3s linear forwards;
+}
+
+/* Nøkkelrammer for Pikachu som løper */
+@keyframes runAcross {
+  0% {
+    left: -150px;
+    transform: scaleX(1); /* vanlig retning */
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    left: 100vw; /* løper helt ut av skjermen */
+    transform: scaleX(1);
+  }
+}
