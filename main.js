@@ -93,7 +93,7 @@ const pikachuContainer = document.getElementById("pikachuContainer");
 pikachuBtn.addEventListener("click", () => {
   // Lager et <img>-element for Pikachu
   const pikachu = document.createElement("img");
-  // 💛 Kul Pikachu GIF (direkte lenke)
+  // Pikachu GIF 
   pikachu.src =
     "https://i.pinimg.com/originals/ab/be/28/abbe28a943ed44fcd98452687f7c46c9.gif";
   pikachu.classList.add("pikachu");

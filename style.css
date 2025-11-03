@@ -115,13 +115,6 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ====== MOBIL ====== */
-@media (max-width: 600px) {
-  .pokemon-card {
-    width: 45%;
-  }
-}
-
 /* === Knapp i header === */
 .pikachu-btn {
   background: #ffcb05;
@@ -167,5 +160,12 @@ footer {
   100% {
     left: 100vw; /* løper helt ut av skjermen */
     transform: scaleX(1);
+  }
+}
+
+/* ====== MOBIL ====== */
+@media (max-width: 600px) {
+  .pokemon-card {
+    width: 45%;
   }
 }
