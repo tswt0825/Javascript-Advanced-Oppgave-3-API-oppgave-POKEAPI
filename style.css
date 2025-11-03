@@ -23,7 +23,48 @@ header h1 {
   letter-spacing: 2px;
 }
 
-/* ====== SØKEBOKS ====== */
+/* === Knapp i header === */
+.pikachu-btn {
+  background: #ffcb05;
+  border: 2px solid #3b4cca;
+  color: #2a75bb;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.pikachu-btn:hover {
+  background: #ffe066;
+  transform: scale(1.05);
+}
+
+.pikachu {
+  position: absolute;
+  bottom: 0;
+  left: -150px; /* starter utenfor skjermen */
+  width: 120px;
+  animation: runAcross 3s linear forwards;
+}
+
+/* Nøkkelrammer for Pikachu som løper */
+@keyframes runAcross {
+  0% {
+    left: -150px;
+    transform: scaleX(1); /* vanlig retning */
+  }
+  50% {
+    transform: scaleX(1);
+  }
+  100% {
+    left: 100vw; /* løper helt ut av skjermen */
+    transform: scaleX(1);
+  }
+}
+
+/* ====== Search ====== */
 .search-box {
   margin: 20px auto;
 }
@@ -53,13 +94,14 @@ header h1 {
   transform: scale(1.05);
 }
 
-/* ====== POKÉMON-KORT ====== */
+/* ====== POKÉMON CARDS ====== */
 .pokemon-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
   padding: 20px;
+ 
 }
 
 .pokemon-card {
@@ -86,7 +128,25 @@ header h1 {
   text-transform: capitalize;
 }
 
-/* ====== KNAPP: LAST INN FLERE ====== */
+/*  FAVORITE BUTTON STYLING */
+.fav-btn {
+  background: rgba(255, 203, 5, 0.85);
+  border: 2px solid #2a75bb;
+  color: #2a75bb;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fav-btn:hover {
+  background: #ffcb05;
+  transform: scale(1.05);
+}
+
+/* ====== Button that will load inn ekstra pokemon ====== */
 .load-more {
   background: #458f47;
   border: none;
@@ -96,7 +156,7 @@ header h1 {
   font-weight: bold;
   border-radius: 10px;
   cursor: pointer;
-  margin-bottom: 80px;
+  margin-bottom: 120px;
   transition: all 0.3s ease;
 }
 
@@ -108,59 +168,35 @@ header h1 {
 /* ====== FOOTER ====== */
 footer {
   background: rgba(0, 0, 0, 0.3);
-  padding: 10px;
+  padding: 8px;
   position: fixed;
   bottom: 0;
   width: 100%;
   font-size: 0.9rem;
 }
 
-/* === Knapp i header === */
-.pikachu-btn {
-  background: #ffcb05;
-  border: 2px solid #3b4cca;
-  color: #2a75bb;
+.back-to-top {
+  background: #3b4cca;
+  color: #ffcb05;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
   font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 12px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 5px;
   transition: all 0.3s ease;
 }
 
-.pikachu-btn:hover {
-  background: #ffe066;
+.back-to-top:hover {
+  background: #2a75bb;
   transform: scale(1.05);
 }
 
-/* === Pikachu-animasjon === */
+/* === Pikachu-animasjon in header === */
 #pikachuContainer {
   position: relative;
-  height: 75px; /* plass til Pikachu */
+  height: 80px; /* plass til Pikachu */
   overflow: hidden;
-}
-
-.pikachu {
-  position: absolute;
-  bottom: 0;
-  left: -150px; /* starter utenfor skjermen */
-  width: 120px;
-  animation: runAcross 3s linear forwards;
-}
-
-/* Nøkkelrammer for Pikachu som løper */
-@keyframes runAcross {
-  0% {
-    left: -150px;
-    transform: scaleX(1); /* vanlig retning */
-  }
-  50% {
-    transform: scaleX(1);
-  }
-  100% {
-    left: 100vw; /* løper helt ut av skjermen */
-    transform: scaleX(1);
-  }
 }
 
 /* ====== MOBIL ====== */
