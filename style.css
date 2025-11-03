@@ -136,7 +136,7 @@ footer {
 /* === Pikachu-animasjon === */
 #pikachuContainer {
   position: relative;
-  height: 100px; /* plass til Pikachu */
+  height: 75px; /* plass til Pikachu */
   overflow: hidden;
 }
 
