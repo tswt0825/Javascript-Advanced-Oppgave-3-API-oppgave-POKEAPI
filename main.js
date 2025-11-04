@@ -21,6 +21,8 @@ async function fetchPokemonList() {
     );
     const data = await response.json();
 
+    console.log(data);
+
     const pokemonList = [];
 
     for (const pokemon of data.results) {
@@ -47,7 +49,7 @@ function displayPokemon(pokemonList) {
     const card = document.createElement("div");
     card.classList.add("pokemon-card");
 
-    // ⭐ NEW: check if Pokémon is a favorite
+    //  NEW: check if Pokémon is a favorite
     const isFavorite = favorites.includes(pokemon.name);
 
     card.innerHTML = `
@@ -56,7 +58,7 @@ function displayPokemon(pokemonList) {
       <h3>${pokemon.name}</h3>
       <p>Type: ${pokemon.types.map((t) => t.type.name).join(", ")}</p>
 
-      <!-- ⭐ NEW: Favorite button -->
+      <!--   Favorite button -->
       <button class="fav-btn" data-name="${pokemon.name}">
         ${isFavorite ? "⭐ Remove Favorite" : "☆ Add Favorite"}
       </button>
@@ -87,6 +89,7 @@ function toggleFavorite(name) {
 async function showFavorites() {
   if (favorites.length === 0) {
     pokemonContainer.innerHTML = "<p>No favorites yet ⭐</p>";
+
     return;
   }
 
@@ -94,6 +97,7 @@ async function showFavorites() {
   for (const name of favorites) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const data = await response.json();
+
     favData.push(data);
   }
 
@@ -129,7 +133,7 @@ loadMoreBtn.addEventListener("click", () => {
   fetchPokemonList();
 });
 
-// ====== ⭐ NEW: SHOW FAVORITES BUTTON ======
+// ====== SHOW FAVORITES BUTTON ======
 const showFavBtn = document.createElement("button");
 showFavBtn.textContent = "⭐ Show Favorites";
 showFavBtn.classList.add("load-more");

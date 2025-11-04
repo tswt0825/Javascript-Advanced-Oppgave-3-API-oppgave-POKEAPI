@@ -23,7 +23,41 @@ header h1 {
   letter-spacing: 2px;
 }
 
-/* === Knapp i header === */
+.pokeball {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+  width: 50px;
+  animation: spin 20s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pokeballRight {
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  width: 50px;
+  animation: spinReverse 20s linear infinite;
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* === button i header === */
 .pikachu-btn {
   background: #ffcb05;
   border: 2px solid #3b4cca;
@@ -44,7 +78,7 @@ header h1 {
 .pikachu {
   position: absolute;
   bottom: 0;
-  left: -150px; /* starter utenfor skjermen */
+  left: -150px; /* starts outside frame*/
   width: 120px;
   animation: runAcross 3s linear forwards;
 }
@@ -53,13 +87,13 @@ header h1 {
 @keyframes runAcross {
   0% {
     left: -150px;
-    transform: scaleX(1); /* vanlig retning */
+    transform: scaleX(1); /* regular */
   }
   50% {
     transform: scaleX(1);
   }
   100% {
-    left: 100vw; /* løper helt ut av skjermen */
+    left: 100vw; /* will run out of frame */
     transform: scaleX(1);
   }
 }
@@ -146,7 +180,7 @@ header h1 {
   transform: scale(1.05);
 }
 
-/* ====== Button that will load inn ekstra pokemon ====== */
+/* ====== Button that will load inn extra pokemon ====== */
 .load-more {
   background: #458f47;
   border: none;
@@ -195,7 +229,7 @@ footer {
 /* === Pikachu-animasjon in header === */
 #pikachuContainer {
   position: relative;
-  height: 80px; /* plass til Pikachu */
+  height: 80px; /* room for Pikachu */
   overflow: hidden;
 }
 
