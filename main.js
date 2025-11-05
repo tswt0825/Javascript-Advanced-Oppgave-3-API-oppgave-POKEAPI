@@ -13,6 +13,12 @@ const limit = 20; // How many Pokémon to fetch at once
 // ====== ⭐ NEW: FAVORITES STATE ======
 let favorites = [];
 
+// Load favorites from localStorage if available
+const storedFavorites = localStorage.getItem("favorites");
+if (storedFavorites) {
+  favorites = JSON.parse(storedFavorites);
+}
+
 // ====== FETCH A LIST OF POKÉMON ======
 async function fetchPokemonList() {
   try {
@@ -80,6 +86,10 @@ function toggleFavorite(name) {
   } else {
     favorites.push(name);
   }
+
+  // Update localStorage
+  localStorage.setItem("favorites", JSON.stringify(favorites));
+
   // Refresh Pokémon list to update star icons
   pokemonContainer.innerHTML = "";
   fetchPokemonList();
